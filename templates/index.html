@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduGenie - AI Learning Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>EduGenie</h1>
+            <p>Google Gemini Powered Learning Assistant</p>
+        </div>
+    </header>
+
+
+    <main class="container">
+        <!-- Task Selection -->
+<section class="card">
+    <h2>Select Learning Task</h2>
+
+    <select id="taskSelector" onchange="showSelectedTask()">
+        <option value="">-- Select a Task --</option>
+        <option value="qa">QnA</option>
+        <option value="explain">Explain</option>
+        <option value="quiz">Quiz</option>
+        <option value="summary">Summary</option>
+        <option value="learning">Recommend Path</option>
+    </select>
+
+    <p id="taskMessage" class="result">
+        Select a task to get started.
+    </p>
+</section>
+
+        <!-- Q&A -->
+        <section class="card">
+            <h2>Ask EduGenie</h2>
+
+            <textarea
+                id="question"
+                placeholder="Ask your academic question..."
+            ></textarea>
+
+            <button onclick="askQuestion()">
+                Ask Question
+            </button>
+
+            <div id="qaResult" class="result"></div>
+        </section>
+
+
+        <!-- Explanation -->
+        <section class="card">
+            <h2>Explain a Topic</h2>
+
+            <input
+                type="text"
+                id="topic"
+                placeholder="Enter a topic..."
+            >
+
+            <button onclick="explainTopic()">
+                Explain
+            </button>
+
+            <div id="explainResult" class="result"></div>
+        </section>
+
+
+        <!-- Quiz -->
+        <section class="card">
+            <h2>Generate Quiz</h2>
+
+            <textarea
+                id="quizContent"
+                placeholder="Enter content for the quiz..."
+            ></textarea>
+
+            <button onclick="generateQuiz()">
+                Generate Quiz
+            </button>
+
+            <div id="quizResult" class="result"></div>
+        </section>
+
+
+        <!-- Summary -->
+        <section class="card">
+            <h2>Summarize Text</h2>
+
+            <textarea
+                id="summaryText"
+                placeholder="Paste educational content here..."
+            ></textarea>
+
+            <button onclick="summarizeText()">
+                Summarize
+            </button>
+
+            <div id="summaryResult" class="result"></div>
+        </section>
+
+
+        <!-- Learning Path -->
+        <section class="card">
+            <h2>Personalized Learning Path</h2>
+
+            <input
+                type="text"
+                id="learningTopic"
+                placeholder="Enter a topic you want to learn..."
+            >
+
+            <button onclick="getLearningPath()">
+                Create Learning Path
+            </button>
+
+            <div id="learningResult" class="result"></div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>EduGenie © 2026 | AI-Powered Learning Assistant</p>
+    </footer>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
